@@ -1,0 +1,118 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global Styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .logo img {
+    width: 100px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li ul {
+    position: absolute;
+    background-color: #fff;
+    display: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  nav ul li:hover ul {
+    display: block;
+  }
+  
+  nav ul li ul li {
+    margin: 0;
+    width: 150px;
+    text-align: left;
+  }
+  
+  nav ul li ul li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  nav ul li ul li a:hover {
+    background-color: #f7f7f7;
+  }
+  
+  /* Main Styles */
+  main {
+    padding: 40px 0;
+  }
+  
+  .dashboard-home {
+    background-color: #f7f7f7;
+    text-align: center;
+    padding: 60px 0;
+  }
+  
+  .pages, .posts, .media {
+    padding: 20px 0;
+  }
+  
+  .pages h2, .posts h2, .media h2 {
+    margin-bottom: 20px;
+  }
+  
+  .pages ul, .posts ul, .media ul {
+    list-style: none;
+  }
+  
+  .pages ul li, .posts ul li, .media ul li {
+    margin-bottom: 10px;
+  }
+  
+  .pages ul li a, .posts ul li a, .media ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .pages ul li a:hover, .posts ul li a:hover, .media ul li a:hover {
+    background-color: #222;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #ccc;
+    text-align: center;
+    padding: 20px;
+  }
+  
