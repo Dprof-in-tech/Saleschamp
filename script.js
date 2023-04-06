@@ -171,69 +171,39 @@
         ]
     });
     
-    
-    // Review slider
-    $('.review-slider').slick({
-        autoplay: true,
-        dots: false,
-        infinite: true,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                }
-            }
-        ]
-    });
-    
-    
-    // Widget slider
-    $('.sidebar-slider').slick({
-        autoplay: true,
-        dots: false,
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    });
-    
-    
-    // Quantity
-    $('.qty button').on('click', function () {
-        var $button = $(this);
-        var oldValue = $button.parent().find('input').val();
-        if ($button.hasClass('btn-plus')) {
-            var newVal = parseFloat(oldValue) + 1;
-        } else {
-            if (oldValue > 0) {
-                var newVal = parseFloat(oldValue) - 1;
-            } else {
-                newVal = 0;
-            }
-        }
-        $button.parent().find('input').val(newVal);
-    });
-    
-    
-    // Shipping address show hide
-    $('.checkout #shipto').change(function () {
-        if($(this).is(':checked')) {
-            $('.checkout .shipping-address').slideDown();
-        } else {
-            $('.checkout .shipping-address').slideUp();
-        }
-    });
-    
-    
-    // Payment methods show hide
-    $('.checkout .payment-method .custom-control-input').change(function () {
-        if ($(this).prop('checked')) {
-            var checkbox_id = $(this).attr('id');
-            $('.checkout .payment-method .payment-content').slideUp();
-            $('#' + checkbox_id + '-show').slideDown();
-        }
-    });
 })(jQuery);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var searchInput = document.getElementById('searchInput');
+  var searchResults = document.getElementById('searchResults');
+  
+  // Event listener for search input
+  searchInput.addEventListener('input', function() {
+    var searchTerm = searchInput.value.toLowerCase();
+    var products = document.getElementById('products').children;
+    
+    // Loop through products to filter based on search term
+    for (var i = 0; i < products.length; i++) {
+      var product = products[i];
+      var productTitle = product.getElementsByClassName('product-title')[0].getElementsByTagName('a')[0].innerText.toLowerCase();
+      
+      // Display products that match search term, hide others
+      if (productTitle.indexOf(searchTerm) > -1) {
+        product.style.display = 'block';
+      } else {
+        product.style.display = 'none';
+      }
+    }
+    
+    // Show/hide product slider based on search results
+    if (searchResults.children.length > 0) {
+      document.getElementsByClassName('product-slider')[0].style.display = 'block';
+    } else {
+      document.getElementsByClassName('product-slider')[0].style.display = 'none';
+    }
+  });
+});
+
+
 
